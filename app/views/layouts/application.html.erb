@@ -11,6 +11,25 @@
   </head>
 
   <body>
+        <div id="border">
+          <nav style="-webkit-app-region: drag">
+              <%= image_tag("Logo.svg", :style => "-webkit-app-region: no-drag;", :class => "logo") %>
+              <p class="title" id="title" style="-webkit-app-region: no-drag">Matter</p>
+          </nav>
+      </div>
+      <div class="search-bar">
+      <input type="text" id="search" style="-webkit-app-region: no-drag" placeholder="Search" onkeypress="press(event)">
+      <button id="google" style="-webkit-app-region: no-drag"onclick="submitForm();"><i class="fab fa-google"></i></button>
+      <button id="lookup" style="-webkit-app-region: no-drag"><i class="fab fa-pagelines"></i></button>
+      </div>
+      <div class="panel" id="panel" style="left: -20%;">
+          <ul>
+              <li id="home"><a href="mainWindow.html"><i class="fas fa-home"></i> Home</a></li>
+              <li id="tree"><a href="tree.html"><i class="fab fa-pagelines"></i> Tree</a></li>
+              <li id="image"><a href="image.html"><i class="far fa-image"></i> ImgSearch</a></li>
+              <li id="about" onclick="help();"><i class="fab fa-github"></i> About</li>
+          </ul>
+      </div>
     <%= yield %>
   </body>
 </html>
